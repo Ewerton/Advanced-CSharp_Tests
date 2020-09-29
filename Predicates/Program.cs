@@ -24,11 +24,29 @@ namespace Predicates
             // Or lambda
             //Predicate<string> isUpper = s => s.Equals(s.ToUpper());
             // bool result = isUpper("hello world!!");
+
+            TestMyOwnWhere();
+
+
         }
+
 
         static bool IsUpperCaseMethod(string str)
         {
             return str.Equals(str.Trim().ToUpper());
         }
+        private static void TestMyOwnWhere()
+        {
+            List<string> fruits = new List<string> { "apple", "passionfruit", "banana", "mango", "orange", "blueberry", "grape", "strawberry" };
+
+            // Calling my own where function to test how Func and predicates works as method parameters 
+            IEnumerable<string> query = fruits.MyOwnWhere(fruit => fruit.Length <= 6);
+
+            foreach (string fruit in query)
+            {
+                Console.WriteLine(fruit);
+            }
+        }
+
     }
 }
