@@ -10,22 +10,27 @@ namespace Delegates
     {
         static void Main(string[] args)
         {
+            // A code that does not uses delegates
             Console.WriteLine("Executing TestWithoutDelegates()");
             TestWithoutDelegates();
             Console.WriteLine("--------------------------------");
 
+            // Same Use case, but using delegates
             Console.WriteLine("Executing TestWithDelegates()");
             TestWithDelegates();
             Console.WriteLine("--------------------------------");
 
+            // Same use case, but using Action() which is a type of a generic delegate who does not return a value
             Console.WriteLine("Executing TestWithAction()");
             TestWithAction();
             Console.WriteLine("--------------------------------");
 
+            // Same use case, but using a custom generic delegate which is in fact the same thing as an Action() 
             Console.WriteLine("Executing GenericDelegate()");
             TestGenericDelegate();
             Console.WriteLine("--------------------------------");
 
+            // Same use case, but using Fun() which is a type of a generic delegate who has a return value 
             Console.WriteLine("Executing TestWithFunc()");
             TestWithFunc();
             Console.WriteLine("--------------------------------");
@@ -93,7 +98,7 @@ namespace Delegates
             // Here we are saying that the filterHandler point to the ApplyBrightness() method.
             Func<Photo, ImageProcessingResult> filterHandlers = filters.ApplyBrightness;
 
-            // We can assign a labda to an Func
+            // We can assign a lambda to an Func
             Func<Photo, ImageProcessingResult> myInLineFilter = (Photo photo) =>
             {
                 Console.WriteLine("Creating an calling an inline 'filter' from lambda function");

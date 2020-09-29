@@ -24,7 +24,7 @@ namespace Events
             // an exemple using the built in "EventHandler" that comes with the .Net framework
             ConsumerEventHandler cons2 = new ConsumerEventHandler();
 
-            // Using the built in "Event Handler" and returning data
+            // Using the built in "Event Handler" and returning some custom data
             ConsumerEventHandlerWithData cons3 = new ConsumerEventHandlerWithData();
 
             cons1.Execute();

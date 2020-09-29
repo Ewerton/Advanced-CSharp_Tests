@@ -8,7 +8,8 @@ namespace Predicates
 {
     class Program
     {
-        // Remember: Predicate delegate takes one input parameter and boolean return type.
+        // It represents a method containing a set of criteria and checks whether the passed parameter meets those criteria. 
+        // A predicate delegate methods must take one input parameter and return a boolean - true or false.
         static void Main(string[] args)
         {
             Predicate<string> isUpperPredicate = IsUpperCaseMethod;
@@ -26,8 +27,6 @@ namespace Predicates
             // bool result = isUpper("hello world!!");
 
             TestMyOwnWhere();
-
-
         }
 
 

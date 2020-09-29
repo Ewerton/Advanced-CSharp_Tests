@@ -7,7 +7,6 @@ using System.Threading.Tasks;
 namespace Delegates
 {
     // delegates can also be generics, like this example
-
     public delegate T add<T>(T param1, T param2); // generic delegate
 
     public class GenericDelegate
