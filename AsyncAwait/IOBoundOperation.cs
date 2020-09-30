@@ -26,6 +26,8 @@ namespace AsyncAwaitLib
             // Simulates high and variable latency for each request
             //Thread.Sleep(word.Length * 500);
 
+            //await Task.Delay(TimeSpan.FromSeconds(3));
+
             var html = await _httpClient.GetStringAsync(URL);
 
             word = word.Trim();

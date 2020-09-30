@@ -22,7 +22,7 @@ namespace AsyncAwaitLib
         private int ExpensiveCalculationInAnotherThread()
         {
             // Simulates some expensive calculation
-            Thread.Sleep(3000);
+            Task.Delay(TimeSpan.FromSeconds(3));
 
             Random rand = new Random(1000);
             var res = rand.Next();
