@@ -84,6 +84,13 @@ namespace AsyncAwaitUI
             {
                 var currentTask = await Task.WhenAny(lstTasks); // When any of the task finishes it will be returned in the currentTask variable
                 lstTasks.Remove(currentTask);
+
+                //https://docs.microsoft.com/en-us/dotnet/standard/async-in-depth
+                // Best explanation about await, so far...
+                // Using await allows your application or service to perform useful work while a task is running by yielding control to its caller until 
+                // the task is done. Your code does not need to rely on callbacks or events to continue execution after the task has been completed.
+                // The language and task API integration does that for you. If you’re using Task<T>, the await keyword will additionally "unwrap" the value returned 
+                // when the Task is complete. The details of how this works are explained further below.
                 var result = await currentTask;
                 totalWords = totalWords + result.Count;
                 ProcessCompletedTask(result);
