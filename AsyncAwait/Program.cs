@@ -36,7 +36,7 @@ namespace AsyncAwaitLib
             string word = "net";
             string url = "https://dotnetfoundation.org";
             
-            var reqResult = await ioBound.GetWordCountInWebSite(url, word); //For C# 7.1
+            var reqResult = await ioBound.GetWordCountInWebSiteAsync(url, word); //For C# 7.1
             //int qtd = ioBound.GetWordCountInWebSite(url, word).GetAwaiter().GetResult(); // Earlier versions of C#
 
             Console.WriteLine("The word \"{0}\" appears {1} times in the URL \"{2}\"", reqResult.Word, reqResult.Count, url);
@@ -46,7 +46,7 @@ namespace AsyncAwaitLib
         {
             CPUBoundOperation cpuBound = new CPUBoundOperation();
 
-            int res = await cpuBound.ExpensiveCalculation(); //For C# 7.1
+            int res = await cpuBound.ExpensiveCalculationAsync(); //For C# 7.1
             //int qtd = cpuBound.ExpensiveCalculation().GetAwaiter().GetResult(); // Earlier versions of C#
 
             Console.WriteLine("The expensive calculation returned \"{0}\"", res);

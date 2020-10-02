@@ -24,7 +24,8 @@ namespace AsyncAwaitUI
 
             IOBoundOperation ioBound = new IOBoundOperation();
 
-            Task<RequestResult> slowTask = ioBound.GetWordCountInWebSite(txtURL.Text.Trim(), txtWord.Text.Trim());
+            // Task is an object that encapsulates the state of an assynchronous operation
+            Task<RequestResult> slowTaskAsync = ioBound.GetWordCountInWebSiteAsync(txtURL.Text.Trim(), txtWord.Text.Trim());
 
             // Any other work on the UI thread can be done here, such as enabling a Progress Bar.
             // This is important to do here, before the "await" call, so that the user
@@ -37,7 +38,7 @@ namespace AsyncAwaitUI
             timer1.Tick += IncrementProgressBar;
 
             // Here we will need to evaluate the count of the words, so here we "await" the GetWordCountInWebSite() to finish  
-            RequestResult reqResult = await slowTask;
+            RequestResult reqResult = await slowTaskAsync;
 
             txtResult.Text = String.Format("The word \"{0}\" appears {1} times in the URL \"{2}\"", reqResult.Word, reqResult.Count, txtURL.Text);
 
@@ -64,7 +65,7 @@ namespace AsyncAwaitUI
             var lstTasks = new List<Task<RequestResult>>();
             foreach (string word in lstWords)
             {
-                lstTasks.Add(ioBound.GetWordCountInWebSite(txtUrl2.Text, word));
+                lstTasks.Add(ioBound.GetWordCountInWebSiteAsync(txtUrl2.Text, word));
             }
 
             // Any other work on the UI thread can be done here, such as enabling a Progress Bar.

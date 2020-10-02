@@ -18,7 +18,7 @@ namespace AsyncAwaitLib
         /// </summary>
         /// <param name="URL"></param>
         /// <returns></returns>
-        public async Task<RequestResult> GetWordCountInWebSite(string URL, string word)
+        public async Task<RequestResult> GetWordCountInWebSiteAsync(string URL, string word)
         {
             // The await keyword here, suspends GetWordCountInWebSite() to allow the caller (the web server) or the interface
             // to accept another request, rather than blocking on this one.

@@ -11,7 +11,7 @@ namespace AsyncAwaitLib
     public class CPUBoundOperation
     {
 
-        public async Task<int> ExpensiveCalculation()
+        public async Task<int> ExpensiveCalculationAsync()
         {
             // For CPU bound operations is desired to execute those operations in a separate thread (in I/O bound you should never do it)
             // So, we use Task.Run() to execute it in another thread and this method become just an "entry point" for the Expensive Calculation itself which will be done by ExpensiveCalculationInAnotherThread()
