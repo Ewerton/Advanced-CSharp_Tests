@@ -6,21 +6,21 @@ using System.Threading.Tasks;
 
 namespace Events
 {
-    public class ConsumerEventHandlerWithData
+    public class ConsumerWithDefaultParameters
     {
         public void Execute()
         {
-            PublisherWithEventHandlerWithData pub = new PublisherWithEventHandlerWithData();
+            PublisherWithDefaultParameters pub = new PublisherWithDefaultParameters();
 
             // This class is the consumer of the publisher, so we want to subscribe to the ProcessCompleted event to be notified when it ends.
-            pub.ProcessCompleted += WhenProcessCompleted;// register with an event
+            pub.ProcessCompleted += OnProcessCompleted;   
             pub.StartProcess();
         }
 
         // event handler
-        public static void WhenProcessCompleted(object sender, ProcessingResult e)
+        private void OnProcessCompleted(object source, EventArgs args)
         {
-            Console.WriteLine("Process Completed on ConsumerEventHandlerWithData!");
+            Console.WriteLine("Process Completed on Consumer!");
         }
     }
 }

@@ -43,18 +43,24 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="ConsumerEventHandlerWithData.cs" />
-    <Compile Include="ConsumerEventHandler.cs" />
-    <Compile Include="Consumer.cs" />
+    <Compile Include="ProcessingArgs.cs" />
+    <Compile Include="With Custom Return Derived from EventArgs\ConsumerWithDerivedReturn.cs" />
+    <Compile Include="With Custom Return Derived from EventArgs\PublisherWithDerivedReturn.cs" />
+    <Compile Include="With Default Parameters\ConsumerWithDefaultParameters.cs" />
+    <Compile Include="Built In Event Handler Custom Parameters\ConsumerEventHandlerWithCustomParams.cs" />
+    <Compile Include="With Built In Event Handler\ConsumerWithBuiltInEventHandler.cs" />
+    <Compile Include="Delegate and Event without params\ConsumerWithoutParams.cs" />
     <Compile Include="ProcessingResult.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="PublisherWithEventHandlerWithData.cs" />
-    <Compile Include="PublisherWithEventHandler.cs" />
-    <Compile Include="Publisher.cs" />
+    <Compile Include="With Default Parameters\PublisherWithDefaultParameters.cs" />
+    <Compile Include="Built In Event Handler Custom Parameters\PublisherWithEventHandlerWithCustomParams.cs" />
+    <Compile Include="With Built In Event Handler\PublisherWithBuiltInEventHandler.cs" />
+    <Compile Include="Delegate and Event without params\PublisherWithoutParams.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

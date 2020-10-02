@@ -19,19 +19,24 @@ namespace Events
         {
 
             // An example declaring an delegate and an event, the "old school" way
-            Consumer cons1 = new Consumer();
+            ConsumerWithoutParams cons1 = new ConsumerWithoutParams();
+
+            // An example declaring an delegate and an event, the "old school" way but using the default params in the .Net way
+            ConsumerWithDefaultParameters cons2 = new ConsumerWithDefaultParameters();
 
             // an exemple using the built in "EventHandler" that comes with the .Net framework
-            ConsumerEventHandler cons2 = new ConsumerEventHandler();
+            ConsumerWithBuiltInEventHandler cons3 = new ConsumerWithBuiltInEventHandler();
 
             // Using the built in "Event Handler" and returning some custom data
-            ConsumerEventHandlerWithData cons3 = new ConsumerEventHandlerWithData();
+            ConsumerEventHandlerWithCustomParams cons4 = new ConsumerEventHandlerWithCustomParams();
 
             cons1.Execute();
 
             cons2.Execute();
 
             cons3.Execute();
+
+            cons4.Execute();
         }
     }
 }

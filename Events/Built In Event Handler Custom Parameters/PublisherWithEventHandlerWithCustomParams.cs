@@ -7,13 +7,16 @@ using System.Threading.Tasks;
 
 namespace Events
 {
-    public class PublisherWithEventHandlerWithData
+    public class PublisherWithEventHandlerWithCustomParams
     {
         // public delegate void Notify();  // delegate
         // public event Notify ProcessCompleted; 
 
         // declaring an event using built-in EventHandler .net offer, no need to declare a "delegate" and a "event"
         public event EventHandler<ProcessingResult> ProcessCompleted;
+
+        // Or using a class derived from EventArgs
+        // public event EventHandler<ProcessingArgs> ProcessCompleted;
 
         public void StartProcess()
         {

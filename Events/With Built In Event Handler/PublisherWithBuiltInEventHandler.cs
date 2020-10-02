@@ -7,25 +7,26 @@ using System.Threading.Tasks;
 
 namespace Events
 {
-    public class Publisher
+    public class PublisherWithBuiltInEventHandler
     {
-        public delegate void Notify();  // delegate
-        public event Notify ProcessCompleted; // event
+        // public delegate void Notify();  // delegate
+        // public event Notify ProcessCompleted; 
+        
+        // declaring an event using built-in EventHandler .net offer, no need to declare a "delegate" and a "event"
+        public event EventHandler ProcessCompleted;
 
         public void StartProcess()
         {
             Console.WriteLine("Process Started!");
             Thread.Sleep(3000);
-            OnProcessCompleted();
+            OnProcessCompleted(EventArgs.Empty); //No event data
         }
 
         //Protected and virtual enable derived classes to override the logic for raising the event. 
         //However, A derived class should always call the On<EventName> method of the base class to ensure that registered delegates receive the event.
-        protected virtual void OnProcessCompleted()
+        protected virtual void OnProcessCompleted(EventArgs e)
         {
-            //if ProcessCompleted is not null then call delegate
-            // If no one subscribe to this event, so it will be null. So, always check if it an event is null!
-            ProcessCompleted?.Invoke();
+            ProcessCompleted?.Invoke(this, e);
         }
     }
 }

@@ -6,11 +6,11 @@ using System.Threading.Tasks;
 
 namespace Events
 {
-    public class Consumer
+    public class ConsumerWithoutParams
     {
         public void Execute()
         {
-            Publisher pub = new Publisher();
+            PublisherWithoutParams pub = new PublisherWithoutParams();
 
             // This class is the consumer of the publisher, so we want to subscribe to the ProcessCompleted event to be notified when it ends.
             pub.ProcessCompleted += WhenProcessCompleted;// register with an event
