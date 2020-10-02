@@ -23,13 +23,12 @@ namespace AsyncAwaitLib
             // The await keyword here, suspends GetWordCountInWebSite() to allow the caller (the web server) or the interface
             // to accept another request, rather than blocking on this one.
 
-            // Simulates high and variable latency for each request
-            //Thread.Sleep(word.Length * 500);
 
-            //await Task.Delay(TimeSpan.FromSeconds(3));
-
+            // Its like the following line is one simgle Method() and the rest of this GetWordCountInWebSiteAsync() is another method
+            // that works as callback for GetWordCountInWebSiteAsync()
             var html = await _httpClient.GetStringAsync(URL);
 
+            // It like the following lines is the callback method for the "await _httpClient.GetStringAsync(URL)" line
             word = word.Trim();
             RequestResult r = new RequestResult();
             r.Word = word;
