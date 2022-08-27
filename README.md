@@ -1,3 +1,3 @@
-# Advanced-CSharp_Tests
-Nothing interesting here, sorry.
-Just a bunch of code i use to test some C# features
+# Advanced CSharp Tests
+
+Well-documented example code demonstrating how to use advanced C# features
